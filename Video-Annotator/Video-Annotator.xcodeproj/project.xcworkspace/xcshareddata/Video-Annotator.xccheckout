@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>024D06B1-0C56-435D-82BD-22A40C228247</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>833F9743658B55932F31B71D764212F7DC7AE5DD</key>
+		<string>https://github.com/kbharathala/Video-Annotator.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Video-Annotator/Video-Annotator.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>833F9743658B55932F31B71D764212F7DC7AE5DD</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kbharathala/Video-Annotator.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>833F9743658B55932F31B71D764212F7DC7AE5DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>833F9743658B55932F31B71D764212F7DC7AE5DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Video-Annotator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
