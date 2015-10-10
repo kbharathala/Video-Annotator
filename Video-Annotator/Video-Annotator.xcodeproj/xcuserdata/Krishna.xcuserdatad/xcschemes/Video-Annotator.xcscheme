@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6BB3E2561BC8D6EF00A4744C"
+               BlueprintIdentifier = "6BB3E28A1BC8D91B00A4744C"
                BuildableName = "Video-Annotator.app"
                BlueprintName = "Video-Annotator"
                ReferencedContainer = "container:Video-Annotator.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6BB3E26F1BC8D6EF00A4744C"
+               BlueprintIdentifier = "6BB3E2A31BC8D91B00A4744C"
                BuildableName = "Video-AnnotatorTests.xctest"
                BlueprintName = "Video-AnnotatorTests"
                ReferencedContainer = "container:Video-Annotator.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6BB3E26F1BC8D6EF00A4744C"
+               BlueprintIdentifier = "6BB3E2A31BC8D91B00A4744C"
                BuildableName = "Video-AnnotatorTests.xctest"
                BlueprintName = "Video-AnnotatorTests"
                ReferencedContainer = "container:Video-Annotator.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6BB3E2561BC8D6EF00A4744C"
+            BlueprintIdentifier = "6BB3E28A1BC8D91B00A4744C"
             BuildableName = "Video-Annotator.app"
             BlueprintName = "Video-Annotator"
             ReferencedContainer = "container:Video-Annotator.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6BB3E2561BC8D6EF00A4744C"
+            BlueprintIdentifier = "6BB3E28A1BC8D91B00A4744C"
             BuildableName = "Video-Annotator.app"
             BlueprintName = "Video-Annotator"
             ReferencedContainer = "container:Video-Annotator.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6BB3E2561BC8D6EF00A4744C"
+            BlueprintIdentifier = "6BB3E28A1BC8D91B00A4744C"
             BuildableName = "Video-Annotator.app"
             BlueprintName = "Video-Annotator"
             ReferencedContainer = "container:Video-Annotator.xcodeproj">

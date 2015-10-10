@@ -7,50 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6BB3E25D1BC8D6EF00A4744C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E25C1BC8D6EF00A4744C /* main.m */; };
-		6BB3E2601BC8D6EF00A4744C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E25F1BC8D6EF00A4744C /* AppDelegate.m */; };
-		6BB3E2631BC8D6EF00A4744C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2621BC8D6EF00A4744C /* ViewController.m */; };
-		6BB3E2661BC8D6EF00A4744C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB3E2641BC8D6EF00A4744C /* Main.storyboard */; };
-		6BB3E2681BC8D6EF00A4744C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BB3E2671BC8D6EF00A4744C /* Images.xcassets */; };
-		6BB3E26B1BC8D6EF00A4744C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB3E2691BC8D6EF00A4744C /* LaunchScreen.xib */; };
-		6BB3E2771BC8D6EF00A4744C /* Video_AnnotatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2761BC8D6EF00A4744C /* Video_AnnotatorTests.m */; };
+		6BB3E2911BC8D91B00A4744C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2901BC8D91B00A4744C /* main.m */; };
+		6BB3E2941BC8D91B00A4744C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2931BC8D91B00A4744C /* AppDelegate.m */; };
+		6BB3E2971BC8D91B00A4744C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2961BC8D91B00A4744C /* ViewController.m */; };
+		6BB3E29A1BC8D91B00A4744C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB3E2981BC8D91B00A4744C /* Main.storyboard */; };
+		6BB3E29C1BC8D91B00A4744C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BB3E29B1BC8D91B00A4744C /* Images.xcassets */; };
+		6BB3E29F1BC8D91B00A4744C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB3E29D1BC8D91B00A4744C /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6BB3E2711BC8D6EF00A4744C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6BB3E24F1BC8D6EF00A4744C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6BB3E2561BC8D6EF00A4744C;
-			remoteInfo = "Video-Annotator";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		6BB3E2571BC8D6EF00A4744C /* Video-Annotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Annotator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6BB3E25B1BC8D6EF00A4744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6BB3E25C1BC8D6EF00A4744C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6BB3E25E1BC8D6EF00A4744C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6BB3E25F1BC8D6EF00A4744C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6BB3E2611BC8D6EF00A4744C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6BB3E2621BC8D6EF00A4744C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6BB3E2651BC8D6EF00A4744C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6BB3E2671BC8D6EF00A4744C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6BB3E26A1BC8D6EF00A4744C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6BB3E2701BC8D6EF00A4744C /* Video-AnnotatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-AnnotatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6BB3E2751BC8D6EF00A4744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6BB3E2761BC8D6EF00A4744C /* Video_AnnotatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Video_AnnotatorTests.m; sourceTree = "<group>"; };
+		6BB3E28B1BC8D91B00A4744C /* Video-Annotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Annotator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BB3E28F1BC8D91B00A4744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BB3E2901BC8D91B00A4744C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6BB3E2921BC8D91B00A4744C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6BB3E2931BC8D91B00A4744C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6BB3E2951BC8D91B00A4744C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6BB3E2961BC8D91B00A4744C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6BB3E2991BC8D91B00A4744C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6BB3E29B1BC8D91B00A4744C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6BB3E29E1BC8D91B00A4744C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6BB3E2541BC8D6EF00A4744C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6BB3E26D1BC8D6EF00A4744C /* Frameworks */ = {
+		6BB3E2881BC8D91B00A4744C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,61 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6BB3E24E1BC8D6EF00A4744C = {
+		6BB3E2821BC8D91B00A4744C = {
 			isa = PBXGroup;
 			children = (
-				6BB3E2591BC8D6EF00A4744C /* Video-Annotator */,
-				6BB3E2731BC8D6EF00A4744C /* Video-AnnotatorTests */,
-				6BB3E2581BC8D6EF00A4744C /* Products */,
+				6BB3E28D1BC8D91B00A4744C /* Video-Annotator */,
+				6BB3E28C1BC8D91B00A4744C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6BB3E2581BC8D6EF00A4744C /* Products */ = {
+		6BB3E28C1BC8D91B00A4744C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6BB3E2571BC8D6EF00A4744C /* Video-Annotator.app */,
-				6BB3E2701BC8D6EF00A4744C /* Video-AnnotatorTests.xctest */,
+				6BB3E28B1BC8D91B00A4744C /* Video-Annotator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6BB3E2591BC8D6EF00A4744C /* Video-Annotator */ = {
+		6BB3E28D1BC8D91B00A4744C /* Video-Annotator */ = {
 			isa = PBXGroup;
 			children = (
-				6BB3E25E1BC8D6EF00A4744C /* AppDelegate.h */,
-				6BB3E25F1BC8D6EF00A4744C /* AppDelegate.m */,
-				6BB3E2611BC8D6EF00A4744C /* ViewController.h */,
-				6BB3E2621BC8D6EF00A4744C /* ViewController.m */,
-				6BB3E2641BC8D6EF00A4744C /* Main.storyboard */,
-				6BB3E2671BC8D6EF00A4744C /* Images.xcassets */,
-				6BB3E2691BC8D6EF00A4744C /* LaunchScreen.xib */,
-				6BB3E25A1BC8D6EF00A4744C /* Supporting Files */,
+				6BB3E2921BC8D91B00A4744C /* AppDelegate.h */,
+				6BB3E2931BC8D91B00A4744C /* AppDelegate.m */,
+				6BB3E2951BC8D91B00A4744C /* ViewController.h */,
+				6BB3E2961BC8D91B00A4744C /* ViewController.m */,
+				6BB3E2981BC8D91B00A4744C /* Main.storyboard */,
+				6BB3E29B1BC8D91B00A4744C /* Images.xcassets */,
+				6BB3E29D1BC8D91B00A4744C /* LaunchScreen.xib */,
+				6BB3E28E1BC8D91B00A4744C /* Supporting Files */,
 			);
 			path = "Video-Annotator";
 			sourceTree = "<group>";
 		};
-		6BB3E25A1BC8D6EF00A4744C /* Supporting Files */ = {
+		6BB3E28E1BC8D91B00A4744C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6BB3E25B1BC8D6EF00A4744C /* Info.plist */,
-				6BB3E25C1BC8D6EF00A4744C /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6BB3E2731BC8D6EF00A4744C /* Video-AnnotatorTests */ = {
-			isa = PBXGroup;
-			children = (
-				6BB3E2761BC8D6EF00A4744C /* Video_AnnotatorTests.m */,
-				6BB3E2741BC8D6EF00A4744C /* Supporting Files */,
-			);
-			path = "Video-AnnotatorTests";
-			sourceTree = "<group>";
-		};
-		6BB3E2741BC8D6EF00A4744C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6BB3E2751BC8D6EF00A4744C /* Info.plist */,
+				6BB3E28F1BC8D91B00A4744C /* Info.plist */,
+				6BB3E2901BC8D91B00A4744C /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -122,13 +82,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6BB3E2561BC8D6EF00A4744C /* Video-Annotator */ = {
+		6BB3E28A1BC8D91B00A4744C /* Video-Annotator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6BB3E27A1BC8D6EF00A4744C /* Build configuration list for PBXNativeTarget "Video-Annotator" */;
+			buildConfigurationList = 6BB3E2AE1BC8D91B00A4744C /* Build configuration list for PBXNativeTarget "Video-Annotator" */;
 			buildPhases = (
-				6BB3E2531BC8D6EF00A4744C /* Sources */,
-				6BB3E2541BC8D6EF00A4744C /* Frameworks */,
-				6BB3E2551BC8D6EF00A4744C /* Resources */,
+				6BB3E2871BC8D91B00A4744C /* Sources */,
+				6BB3E2881BC8D91B00A4744C /* Frameworks */,
+				6BB3E2891BC8D91B00A4744C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -136,46 +96,24 @@
 			);
 			name = "Video-Annotator";
 			productName = "Video-Annotator";
-			productReference = 6BB3E2571BC8D6EF00A4744C /* Video-Annotator.app */;
+			productReference = 6BB3E28B1BC8D91B00A4744C /* Video-Annotator.app */;
 			productType = "com.apple.product-type.application";
-		};
-		6BB3E26F1BC8D6EF00A4744C /* Video-AnnotatorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6BB3E27D1BC8D6EF00A4744C /* Build configuration list for PBXNativeTarget "Video-AnnotatorTests" */;
-			buildPhases = (
-				6BB3E26C1BC8D6EF00A4744C /* Sources */,
-				6BB3E26D1BC8D6EF00A4744C /* Frameworks */,
-				6BB3E26E1BC8D6EF00A4744C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6BB3E2721BC8D6EF00A4744C /* PBXTargetDependency */,
-			);
-			name = "Video-AnnotatorTests";
-			productName = "Video-AnnotatorTests";
-			productReference = 6BB3E2701BC8D6EF00A4744C /* Video-AnnotatorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6BB3E24F1BC8D6EF00A4744C /* Project object */ = {
+		6BB3E2831BC8D91B00A4744C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Krishna Bharathala";
 				TargetAttributes = {
-					6BB3E2561BC8D6EF00A4744C = {
+					6BB3E28A1BC8D91B00A4744C = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					6BB3E26F1BC8D6EF00A4744C = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 6BB3E2561BC8D6EF00A4744C;
 					};
 				};
 			};
-			buildConfigurationList = 6BB3E2521BC8D6EF00A4744C /* Build configuration list for PBXProject "Video-Annotator" */;
+			buildConfigurationList = 6BB3E2861BC8D91B00A4744C /* Build configuration list for PBXProject "Video-Annotator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,79 +121,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 6BB3E24E1BC8D6EF00A4744C;
-			productRefGroup = 6BB3E2581BC8D6EF00A4744C /* Products */;
+			mainGroup = 6BB3E2821BC8D91B00A4744C;
+			productRefGroup = 6BB3E28C1BC8D91B00A4744C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6BB3E2561BC8D6EF00A4744C /* Video-Annotator */,
-				6BB3E26F1BC8D6EF00A4744C /* Video-AnnotatorTests */,
+				6BB3E28A1BC8D91B00A4744C /* Video-Annotator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6BB3E2551BC8D6EF00A4744C /* Resources */ = {
+		6BB3E2891BC8D91B00A4744C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BB3E2661BC8D6EF00A4744C /* Main.storyboard in Resources */,
-				6BB3E26B1BC8D6EF00A4744C /* LaunchScreen.xib in Resources */,
-				6BB3E2681BC8D6EF00A4744C /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6BB3E26E1BC8D6EF00A4744C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				6BB3E29A1BC8D91B00A4744C /* Main.storyboard in Resources */,
+				6BB3E29F1BC8D91B00A4744C /* LaunchScreen.xib in Resources */,
+				6BB3E29C1BC8D91B00A4744C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6BB3E2531BC8D6EF00A4744C /* Sources */ = {
+		6BB3E2871BC8D91B00A4744C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BB3E2631BC8D6EF00A4744C /* ViewController.m in Sources */,
-				6BB3E2601BC8D6EF00A4744C /* AppDelegate.m in Sources */,
-				6BB3E25D1BC8D6EF00A4744C /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6BB3E26C1BC8D6EF00A4744C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6BB3E2771BC8D6EF00A4744C /* Video_AnnotatorTests.m in Sources */,
+				6BB3E2971BC8D91B00A4744C /* ViewController.m in Sources */,
+				6BB3E2941BC8D91B00A4744C /* AppDelegate.m in Sources */,
+				6BB3E2911BC8D91B00A4744C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		6BB3E2721BC8D6EF00A4744C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6BB3E2561BC8D6EF00A4744C /* Video-Annotator */;
-			targetProxy = 6BB3E2711BC8D6EF00A4744C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		6BB3E2641BC8D6EF00A4744C /* Main.storyboard */ = {
+		6BB3E2981BC8D91B00A4744C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6BB3E2651BC8D6EF00A4744C /* Base */,
+				6BB3E2991BC8D91B00A4744C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6BB3E2691BC8D6EF00A4744C /* LaunchScreen.xib */ = {
+		6BB3E29D1BC8D91B00A4744C /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6BB3E26A1BC8D6EF00A4744C /* Base */,
+				6BB3E29E1BC8D91B00A4744C /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -263,7 +177,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6BB3E2781BC8D6EF00A4744C /* Debug */ = {
+		6BB3E2AC1BC8D91B00A4744C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -306,7 +220,7 @@
 			};
 			name = Debug;
 		};
-		6BB3E2791BC8D6EF00A4744C /* Release */ = {
+		6BB3E2AD1BC8D91B00A4744C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,7 +257,7 @@
 			};
 			name = Release;
 		};
-		6BB3E27B1BC8D6EF00A4744C /* Debug */ = {
+		6BB3E2AF1BC8D91B00A4744C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -353,79 +267,37 @@
 			};
 			name = Debug;
 		};
-		6BB3E27C1BC8D6EF00A4744C /* Release */ = {
+		6BB3E2B01BC8D91B00A4744C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Video-Annotator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		6BB3E27E1BC8D6EF00A4744C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Video-AnnotatorTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Annotator.app/Video-Annotator";
-			};
-			name = Debug;
-		};
-		6BB3E27F1BC8D6EF00A4744C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Video-AnnotatorTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Annotator.app/Video-Annotator";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6BB3E2521BC8D6EF00A4744C /* Build configuration list for PBXProject "Video-Annotator" */ = {
+		6BB3E2861BC8D91B00A4744C /* Build configuration list for PBXProject "Video-Annotator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6BB3E2781BC8D6EF00A4744C /* Debug */,
-				6BB3E2791BC8D6EF00A4744C /* Release */,
+				6BB3E2AC1BC8D91B00A4744C /* Debug */,
+				6BB3E2AD1BC8D91B00A4744C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6BB3E27A1BC8D6EF00A4744C /* Build configuration list for PBXNativeTarget "Video-Annotator" */ = {
+		6BB3E2AE1BC8D91B00A4744C /* Build configuration list for PBXNativeTarget "Video-Annotator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6BB3E27B1BC8D6EF00A4744C /* Debug */,
-				6BB3E27C1BC8D6EF00A4744C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		6BB3E27D1BC8D6EF00A4744C /* Build configuration list for PBXNativeTarget "Video-AnnotatorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6BB3E27E1BC8D6EF00A4744C /* Debug */,
-				6BB3E27F1BC8D6EF00A4744C /* Release */,
+				6BB3E2AF1BC8D91B00A4744C /* Debug */,
+				6BB3E2B01BC8D91B00A4744C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6BB3E24F1BC8D6EF00A4744C /* Project object */;
+	rootObject = 6BB3E2831BC8D91B00A4744C /* Project object */;
 }
