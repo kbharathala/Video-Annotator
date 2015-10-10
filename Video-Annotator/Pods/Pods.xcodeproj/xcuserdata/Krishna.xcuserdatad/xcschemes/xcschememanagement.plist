@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ADALiOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OneDriveSDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Video-Annotator.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>youtube-ios-player-helper-Assets.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>youtube-ios-player-helper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3B88FEEB1298A5A13AE2B2582000C75E</key>
+		<key>12A0F1A53A4C48B43BF300DF668D7714</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3BA937AA0CF157E6BE5118D06C513A60</key>
+		<key>B7A0AFAC71F150FBDEBC9BED190FF44D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>44E5B3B94F76A3FE7A16C6CC914ABA1C</key>
+		<key>D134EEA63C07A3CD56FF480F74AD42EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "VideoViewController.h"
+#import "MainViewController.h"
+
+#import <OneDriveSDK/OneDriveSDK.h>
 
 @interface AppDelegate ()
 
@@ -19,9 +22,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ViewController *mainVC = [[ViewController alloc] init];
-    self.window.rootViewController = mainVC;
+    VideoViewController *videoVC = [[VideoViewController alloc] init];
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    self.window.rootViewController = videoVC;
     [self.window makeKeyAndVisible];
+    
+    [ODClient setMicrosoftAccountAppId:@"0000000048160AF8" scopes:@[@"onedrive.readwrite"] ];
     
     return YES;
 }

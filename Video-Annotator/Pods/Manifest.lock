@@ -1,10 +1,29 @@
 PODS:
-  - youtube-ios-player-helper (0.1.4)
+  - ADALiOS (1.0.2)
+  - OneDriveSDK (1.0.4):
+    - OneDriveSDK/Auth (= 1.0.4)
+    - OneDriveSDK/Common (= 1.0.4)
+    - OneDriveSDK/Extensions (= 1.0.4)
+    - OneDriveSDK/Implementations (= 1.0.4)
+    - OneDriveSDK/OneDriveCoreSDK (= 1.0.4)
+  - OneDriveSDK/Auth (1.0.4):
+    - ADALiOS (~> 1.0.2)
+    - OneDriveSDK/Common
+  - OneDriveSDK/Common (1.0.4)
+  - OneDriveSDK/Extensions (1.0.4):
+    - OneDriveSDK/Auth
+    - OneDriveSDK/Implementations
+    - OneDriveSDK/OneDriveCoreSDK
+  - OneDriveSDK/Implementations (1.0.4):
+    - OneDriveSDK/Common
+  - OneDriveSDK/OneDriveCoreSDK (1.0.4):
+    - OneDriveSDK/Common
 
 DEPENDENCIES:
-  - youtube-ios-player-helper (~> 0.1.1)
+  - OneDriveSDK
 
 SPEC CHECKSUMS:
-  youtube-ios-player-helper: 84b1485ebb4b7c6b619c6e05edcb55186723a7c6
+  ADALiOS: 3d07f75bb12c6ceb6a8240b19e691c03ace8aed6
+  OneDriveSDK: b284c17b0efa0b31b7be06d334b15480f732b421
 
 COCOAPODS: 0.39.0
