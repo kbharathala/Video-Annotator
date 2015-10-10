@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3AB8A38C-15EF-4D0B-906E-67C6F2B19C31</string>
+	<string>6A4B0CC7-96CE-4D4C-9C9E-F6C87E6C3D1D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Video-Annotator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/kbharathala/Video-Annotator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Video-Annotator/Video-Annotator.xcodeproj</string>
+	<string>Video-Annotator/Video-Annotator.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>833F9743658B55932F31B71D764212F7DC7AE5DD</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kbharathala/Video-Annotator.git</string>

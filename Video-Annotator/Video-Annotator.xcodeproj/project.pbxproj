@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BE8EF60B95F0B90566E7E89 /* libPods-Video-Annotator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F2C3DCBCDF3F317D5E1200 /* libPods-Video-Annotator.a */; };
 		6BB3E2911BC8D91B00A4744C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2901BC8D91B00A4744C /* main.m */; };
 		6BB3E2941BC8D91B00A4744C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2931BC8D91B00A4744C /* AppDelegate.m */; };
 		6BB3E2971BC8D91B00A4744C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2961BC8D91B00A4744C /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262A8D86BFF236C4D45890F8 /* Pods-Video-Annotator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Annotator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Video-Annotator/Pods-Video-Annotator.release.xcconfig"; sourceTree = "<group>"; };
+		33285BBF592D9D387CCC9A78 /* Pods-Video-Annotator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Annotator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Video-Annotator/Pods-Video-Annotator.debug.xcconfig"; sourceTree = "<group>"; };
 		6BB3E28B1BC8D91B00A4744C /* Video-Annotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Annotator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB3E28F1BC8D91B00A4744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BB3E2901BC8D91B00A4744C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		6BB3E2991BC8D91B00A4744C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BB3E29B1BC8D91B00A4744C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6BB3E29E1BC8D91B00A4744C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A1F2C3DCBCDF3F317D5E1200 /* libPods-Video-Annotator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Video-Annotator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE8EF60B95F0B90566E7E89 /* libPods-Video-Annotator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F810C5F289156D6C40BF4A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33285BBF592D9D387CCC9A78 /* Pods-Video-Annotator.debug.xcconfig */,
+				262A8D86BFF236C4D45890F8 /* Pods-Video-Annotator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6BB3E2821BC8D91B00A4744C = {
 			isa = PBXGroup;
 			children = (
 				6BB3E28D1BC8D91B00A4744C /* Video-Annotator */,
 				6BB3E28C1BC8D91B00A4744C /* Products */,
+				1F810C5F289156D6C40BF4A7 /* Pods */,
+				B9D6270829F2A6FF4D06C6AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +95,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B9D6270829F2A6FF4D06C6AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1F2C3DCBCDF3F317D5E1200 /* libPods-Video-Annotator.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BB3E2AE1BC8D91B00A4744C /* Build configuration list for PBXNativeTarget "Video-Annotator" */;
 			buildPhases = (
+				7590C7A80D83BDE31576FF37 /* Check Pods Manifest.lock */,
 				6BB3E2871BC8D91B00A4744C /* Sources */,
 				6BB3E2881BC8D91B00A4744C /* Frameworks */,
 				6BB3E2891BC8D91B00A4744C /* Resources */,
+				0F062996F86F85E35D60ED3E /* Embed Pods Frameworks */,
+				D333BF093685B12D8C2C19EF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F062996F86F85E35D60ED3E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Video-Annotator/Pods-Video-Annotator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7590C7A80D83BDE31576FF37 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D333BF093685B12D8C2C19EF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Video-Annotator/Pods-Video-Annotator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BB3E2871BC8D91B00A4744C /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		6BB3E2AF1BC8D91B00A4744C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33285BBF592D9D387CCC9A78 /* Pods-Video-Annotator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Video-Annotator/Info.plist";
@@ -269,6 +345,7 @@
 		};
 		6BB3E2B01BC8D91B00A4744C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 262A8D86BFF236C4D45890F8 /* Pods-Video-Annotator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Video-Annotator/Info.plist";
@@ -296,6 +373,7 @@
 				6BB3E2B01BC8D91B00A4744C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
