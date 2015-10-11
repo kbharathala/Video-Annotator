@@ -11,6 +11,8 @@
 #import "MainViewController.h"
 
 #import <OneDriveSDK/OneDriveSDK.h>
+#import <AVFoundation/AVFoundation.h>
+#import <Wit/Wit.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +22,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
+    [Wit sharedInstance].accessToken = @"5619c10f-ef52-40ae-a495-7f74c1d13330";
+    [Wit sharedInstance].detectSpeechStop = WITVadConfigDetectSpeechStop;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     VideoViewController *videoVC = [[VideoViewController alloc] init];

@@ -6,6 +6,8 @@
 target 'Video-Annotator' do
 
 pod 'OneDriveSDK'
+pod 'SVProgressHUD'
+pod 'Wit', '~> 4.0.0'
 
 end
 

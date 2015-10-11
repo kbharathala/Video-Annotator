@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4B6FE46C4EBB1E85A47A05CA'
+               BlueprintIdentifier = 'A0F9D52E9C0ED7620534CE83'
                BlueprintName = 'Pods-Video-Annotator'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Video-Annotator.a'>

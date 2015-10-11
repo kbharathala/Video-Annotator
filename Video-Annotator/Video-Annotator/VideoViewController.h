@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Annotation.h"
+#import <Wit/Wit.h>
 
-@interface VideoViewController : UIViewController <UIWebViewDelegate, NSURLConnectionDataDelegate, UIAlertViewDelegate>
+@interface VideoViewController : UIViewController <UIWebViewDelegate, NSURLConnectionDataDelegate, UIAlertViewDelegate, WitDelegate>
 
 @property (nonatomic, strong) NSString *videoLink;
-@property (nonatomic, strong) Annotation *annotations;
+@property (nonatomic, strong) NSMutableArray *annotations;
 @property (nonatomic, strong) NSString *roomID;
 
 @end

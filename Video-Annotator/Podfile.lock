@@ -18,12 +18,18 @@ PODS:
     - OneDriveSDK/Common
   - OneDriveSDK/OneDriveCoreSDK (1.0.4):
     - OneDriveSDK/Common
+  - SVProgressHUD (1.1.3)
+  - Wit (4.0.0)
 
 DEPENDENCIES:
   - OneDriveSDK
+  - SVProgressHUD
+  - Wit (~> 4.0.0)
 
 SPEC CHECKSUMS:
   ADALiOS: 3d07f75bb12c6ceb6a8240b19e691c03ace8aed6
   OneDriveSDK: b284c17b0efa0b31b7be06d334b15480f732b421
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  Wit: 0988021be2f602bada3698706d46f25625fb0d99
 
 COCOAPODS: 0.39.0

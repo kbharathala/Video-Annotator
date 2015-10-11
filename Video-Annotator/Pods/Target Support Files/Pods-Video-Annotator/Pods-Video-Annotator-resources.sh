@@ -60,10 +60,14 @@ install_resource()
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "ADALiOS/ADALiOS/ADALiOS/ADAL_iPad_Storyboard.storyboard"
   install_resource "ADALiOS/ADALiOS/ADALiOS/ADAL_iPhone_Storyboard.storyboard"
+  install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "Wit/WitResources/Images/microphone.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "ADALiOS/ADALiOS/ADALiOS/ADAL_iPad_Storyboard.storyboard"
   install_resource "ADALiOS/ADALiOS/ADALiOS/ADAL_iPhone_Storyboard.storyboard"
+  install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "Wit/WitResources/Images/microphone.png"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

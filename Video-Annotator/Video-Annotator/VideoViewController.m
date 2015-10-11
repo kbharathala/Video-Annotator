@@ -8,11 +8,14 @@
 
 #import "VideoViewController.h"
 #import <OneDriveSDK/OneDriveSDK.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <Wit/Wit.h>
 
 @interface VideoViewController ()
 
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) NSMutableDictionary *annotationDict;
 
 @end
 
@@ -20,6 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    for(Annotation *a in self.annotations) {
+        for(int i = a.start; i <= a.end; i++) {
+            NSString *key = [NSString stringWithFormat: @"%d", i];
+            NSMutableArray *temp = [self.annotationDict objectForKey:key];
+            if(temp) {
+                [temp addObject: a.comment];
+                [self.annotationDict setObject:temp forKey:key];
+            } else {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:a.comment, nil];
+                [self.annotationDict setObject:array forKey:key];
+            }
+        }
+    }
     
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.webView setAllowsInlineMediaPlayback:YES];
@@ -30,6 +47,9 @@
     self.webView.delegate = self;
     
     [self.view addSubview:self.webView];
+    
+    // NSString *key = [self.videoLink substringFromIndex: ([self.videoLink rangeOfString:@"="].location+1)];
+    NSString *key = @"9MxBaqZ3ZtA";
     
     NSString* embedHTML = [NSString stringWithFormat:@"\
                            <html>\
@@ -47,7 +67,7 @@
                            </script>\
                            <iframe id='playerId' type='text/html' width='%d' height='%d' src='http://www.youtube.com/embed/%@?enablejsapi=1&rel=0&playsinline=1&autoplay=1' frameborder='0'>\
                            </body>\
-                           </html>", (int) self.view.frame.size.width, (int) self.view.frame.size.height, @"9MxBaqZ3ZtA"];
+                           </html>", (int) self.view.frame.size.width, (int) self.view.frame.size.height, key];
     [self.webView loadHTMLString:embedHTML baseURL:[[NSBundle mainBundle] resourceURL]];
 }
 
@@ -58,22 +78,36 @@
     [shareButton addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
     [shareButton setFrame:CGRectMake(523, 11, 28, 28)];
     [shareButton setImage:[UIImage imageNamed:@"shareIcon.png"] forState:UIControlStateNormal];
-    [shareButton setTintColor:[UIColor redColor]];
+    [shareButton setTintColor:[UIColor whiteColor]];
     [self.view addSubview:shareButton];
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [addButton addTarget:self action:@selector(add) forControlEvents:UIControlEventTouchUpInside];
     [addButton setFrame:CGRectMake(453, 8.5, 32, 32)];
     [addButton setImage:[UIImage imageNamed:@"plusIcon.png"] forState:UIControlStateNormal];
-    [addButton setTintColor:[UIColor redColor]];
+    [addButton setTintColor:[UIColor whiteColor]];
     [self.view addSubview:addButton];
     
     UIButton *clockButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [clockButton addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
+    [clockButton addTarget:self action:@selector(uploadToOneDrive) forControlEvents:UIControlEventTouchUpInside];
     [clockButton setFrame:CGRectMake(491, 13, 23, 23)];
     [clockButton setImage:[UIImage imageNamed:@"clockIcon60F.png"] forState:UIControlStateNormal];
-    [clockButton setTintColor:[UIColor redColor]];
+    [clockButton setTintColor:[UIColor whiteColor]];
     [self.view addSubview:clockButton];
+    
+    WITMicButton* witButton = [[WITMicButton alloc] initWithFrame:CGRectMake(422, 12, 24, 24)];
+    [self.view addSubview:witButton];
+}
+
+- (void)witDidGraspIntent:(NSArray *)outcomes messageId:(NSString *)messageId customData:(id) customData error:(NSError*)e {
+    if (e) {
+        NSLog(@"[Wit] error: %@", [e localizedDescription]);
+        return;
+    }
+    NSDictionary *firstOutcome = [outcomes objectAtIndex:0];
+    NSLog(@"%@", firstOutcome);
+    
+    ///[self.view addSubview:labelView];
 }
 
 -(void) share {
@@ -85,7 +119,10 @@
 }
 
 -(void) add {
-    UIAlertView *addAlert = [[UIAlertView alloc] initWithTitle:@"Add Annotation" message:@"Add Annotation" delegate:self cancelButtonTitle:@"Submit" otherButtonTitles:nil];
+    NSString *script = @"ytplayer.pauseVideo()";
+    [self.webView stringByEvaluatingJavaScriptFromString:script];
+    
+    UIAlertView *addAlert = [[UIAlertView alloc] initWithTitle:@"Add Annotation" message:@"Add Annotation" delegate:self cancelButtonTitle:@"Submit" otherButtonTitles:@"Cancel", nil];
     addAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [addAlert show];
     
@@ -96,23 +133,28 @@
     int timeStamp = (int)[[self.webView stringByEvaluatingJavaScriptFromString:script] floatValue];
     
     if([alertView.title isEqualToString:@"Add Annotation"]) {
-        NSString *comment = [[alertView textFieldAtIndex:0] text];
+        NSString *script = @"ytplayer.playVideo()";
+        [self.webView stringByEvaluatingJavaScriptFromString:script];
         
-//        NSString *post = [NSString stringWithFormat:@"roomID=%@&start=%d&end=%d&comment=%@",self.roomID,timeStamp, timeStamp+2, comment];
-//        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-//        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-//        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//
-//        [request setURL:[NSURL URLWithString:@"http://pickup.azurewebsites.net/auth"]];
-//        [request setHTTPMethod:@"POST"];
-//        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//        [request setHTTPBody:postData];
+        if(buttonIndex == 0) {
+            NSString *comment = [[alertView textFieldAtIndex:0] text];
+            
+            NSString *post = [NSString stringWithFormat:@"roomID=%@&start=%d&end=%d&annotate=%@",self.roomID,timeStamp, timeStamp+2, comment];
+            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+            NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+
+            [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/annotate"]];
+            [request setHTTPMethod:@"POST"];
+            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:postData];
         
-        /* NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-         if(!conn) {
-            [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
-         } */
+            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            if(!conn) {
+                [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+            }
+        }
     }
 }
 
@@ -123,20 +165,61 @@
 
 -(void)checkValue:(NSTimer *)mainTimer {
     NSString *script = @"ytplayer.getCurrentTime()";
-    NSLog(@"Time is: %d", (int)[[self.webView stringByEvaluatingJavaScriptFromString:script] floatValue]);
+    int time = (int)[[self.webView stringByEvaluatingJavaScriptFromString:script] floatValue];
+    //NSLog(@"Time is: %d", time);
+    NSLog(@"%@", [self.annotationDict objectForKey:[NSString stringWithFormat:@"%d", time]]);
 }
 
 -(void) uploadToOneDrive {
     
-    NSLog(@"In One Drive");
+    NSString *script = @"ytplayer.pauseVideo()";
+    [self.webView stringByEvaluatingJavaScriptFromString:script];
     
-    __block NSString *oneDriveToken;
+    //__block NSString *oneDriveToken;
     
-    [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
-        if (!error){
-            oneDriveToken = client.authProvider.accountSession.accessToken;
-        }
-    }];
+//    [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
+//        if (!error){
+//            oneDriveToken = client.authProvider.accountSession.accessToken;
+//            
+//            NSString *post = [NSString stringWithFormat:@"roomID=%@&start=%d&end=%d&annotate=%@",self.roomID,timeStamp, timeStamp+2, comment];
+//            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+//            NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+//            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//            
+//            [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/onedrive"]];
+//            [request setHTTPMethod:@"POST"];
+//            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+//            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//            [request setHTTPBody:postData];
+//            
+//            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//            if(!conn) {
+//                [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+//            }
+//
+//        }
+//        NSLog(@"%@", oneDriveToken);
+//        NSString *script = @"ytplayer.playVideo()";
+//        [self.webView stringByEvaluatingJavaScriptFromString:script];
+//    }];
+    
+    NSString *post = [NSString stringWithFormat:@"roomID=%@",self.roomID];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+
+    [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/onedrive"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if(!conn) {
+        [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+    }
+    script = @"ytplayer.playVideo()";
+    [self.webView stringByEvaluatingJavaScriptFromString:script];
 }
 
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DCB73A42E548761EA798BB1F'
+               BlueprintIdentifier = '8B26D572135DFC069CDB7055'
                BlueprintName = 'OneDriveSDK'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libOneDriveSDK.a'>

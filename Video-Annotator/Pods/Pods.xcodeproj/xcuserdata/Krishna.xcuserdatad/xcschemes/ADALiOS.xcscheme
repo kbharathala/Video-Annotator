@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DE287084FB316FAC867195B5'
+               BlueprintIdentifier = '6540C3F2F51FDC2A78E3AEE3'
                BlueprintName = 'ADALiOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libADALiOS.a'>
