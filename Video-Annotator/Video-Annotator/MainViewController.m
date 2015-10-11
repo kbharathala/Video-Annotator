@@ -21,39 +21,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:122.0/255 green:175.0/255 blue:255/255 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:69.0/255 green:202.0/255 blue:255.0/255 alpha:1];
     
-    int size = 160;
+    int size = 60;
     
     UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    searchButton.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-    [searchButton setTitle:@"Search" forState:UIControlStateNormal];
-    [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [searchButton setBackgroundImage:[UIImage imageNamed:@"blueCircle.png"] forState:UIControlStateNormal];
-    [searchButton setFrame:CGRectMake(100-size/2, self.view.frame.size.height/2-size/12, size, size)];
+    [searchButton setBackgroundImage:[UIImage imageNamed:@"searchIcon.png"] forState:UIControlStateNormal];
+    [searchButton setFrame:CGRectMake(114-size/2, self.view.frame.size.height - 125, size, size)];
     [searchButton addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
-    [searchButton setTintColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.5]];
     [self.view addSubview:searchButton];
     
+    UILabel *searchLabel = [[UILabel alloc]initWithFrame:CGRectMake(115-size/2,self.view.frame.size.height-80,size,size)];
+    searchLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    searchLabel.textColor = [UIColor whiteColor];
+    searchLabel.text = @"Search";
+    [self.view addSubview:searchLabel];
+    
     UIButton *chooseExisting = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    chooseExisting.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-    [chooseExisting setTitle:@"From Link" forState:UIControlStateNormal];
-    [chooseExisting setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [chooseExisting setBackgroundImage:[UIImage imageNamed:@"blueCircle.png"] forState:UIControlStateNormal];
-    [chooseExisting setFrame:CGRectMake(self.view.frame.size.width/2-size/2, self.view.frame.size.height/2-size/12, size, size)];
+    [chooseExisting setBackgroundImage:[UIImage imageNamed:@"linkIcon.png"] forState:UIControlStateNormal];
+    [chooseExisting setFrame:CGRectMake(self.view.frame.size.width/2-size/2, self.view.frame.size.height - 125, size, size)];
     [chooseExisting addTarget:self action:@selector(chooseExisting) forControlEvents:UIControlEventTouchUpInside];
-    [chooseExisting setTintColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:0.5]];
     [self.view addSubview:chooseExisting];
     
+    UILabel *chooseExistingLabel = [[UILabel alloc] initWithFrame:CGRectMake(253,self.view.frame.size.height-80, size*2, size)];
+    chooseExistingLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    chooseExistingLabel.textColor = [UIColor whiteColor];
+    chooseExistingLabel.text = @"By Link";
+    [self.view addSubview:chooseExistingLabel];
+    
     UIButton *fromRoomID = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    fromRoomID.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-    [fromRoomID setTitle:@"Room ID" forState:UIControlStateNormal];
-    [fromRoomID setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [fromRoomID setBackgroundImage:[UIImage imageNamed:@"blueCircle.png"] forState:UIControlStateNormal];
-    [fromRoomID setFrame:CGRectMake(self.view.frame.size.width-180, self.view.frame.size.height/2-size/12, size, size)];
-    [fromRoomID setTintColor:[UIColor colorWithRed:0 green:0 blue:1 alpha:0.5]];
+    [fromRoomID setBackgroundImage:[UIImage imageNamed:@"roomIcon.png"] forState:UIControlStateNormal];
+    [fromRoomID setFrame:CGRectMake(self.view.frame.size.width-150, self.view.frame.size.height - 125, size, size)];
     [fromRoomID addTarget:self action:@selector(fromRoomID) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fromRoomID];
+    
+    UILabel *fromRoomLabel = [[UILabel alloc] initWithFrame:CGRectMake(410,self.view.frame.size.height-80, size*2, size)];
+    fromRoomLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    fromRoomLabel.textColor = [UIColor whiteColor];
+    fromRoomLabel.text = @"By Room";
+    [self.view addSubview:fromRoomLabel];
+    
+    UIButton *logoButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [logoButton setBackgroundImage:[UIImage imageNamed:@"yannotate-logo.png"] forState:UIControlStateNormal];
+    [logoButton setUserInteractionEnabled:NO];
+    [logoButton setFrame:CGRectMake(self.view.frame.size.width/2-size*2, -50, size*4, size*4)];
+    [self.view addSubview:logoButton];
 }
 
 - (void)search {
@@ -76,65 +88,53 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if([alertView.title isEqualToString:@"Room ID"]) {
-        NSString *roomID = [[alertView textFieldAtIndex:0] text];
-        NSLog(@"Entered: %@", roomID);
-        
-        NSString *post = [NSString stringWithFormat:@"roomID=%@",roomID];
-        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        
-        [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/annotate"]];
-        [request setHTTPMethod:@"POST"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [request setHTTPBody:postData];
-        
-        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        if(!conn) {
-            [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+    if(buttonIndex == 0) {
+        if([alertView.title isEqualToString:@"Room ID"]) {
+            NSString *roomID = [[alertView textFieldAtIndex:0] text];
+            NSLog(@"Entered: %@", roomID);
+            
+            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.hotbox-x.xyz/annotate/%@", roomID]];
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url
+                                                                   cachePolicy: NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                               timeoutInterval: 10 ];
+            [request setHTTPMethod: @"GET"];
+            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            if(!conn) {
+                [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+            }
+            
+        } else if([alertView.title isEqualToString:@"Search Term"]) {
+            NSString *term = [[alertView textFieldAtIndex:0] text];
+            NSLog(@"Entered: %@", term);
+            
+            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.hotbox-x.xyz/search/%@", term]];
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url
+                                                                   cachePolicy: NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                               timeoutInterval: 10 ];
+            [request setHTTPMethod: @"GET"];
+            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            if(!conn) {
+                [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+            }
+        } else {
+            NSString *video = [[alertView textFieldAtIndex:0] text];
+            NSLog(@"Entered: %@", video);
+            
+            video = [video substringFromIndex:([video rangeOfString:@"="].location+1)];
+            NSLog(@"%@", video);
+            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.hotbox-x.xyz/newroom/%@", video]];
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url
+                                                                   cachePolicy: NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                               timeoutInterval: 10 ];
+            [request setHTTPMethod: @"GET"];
+            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            if(!conn) {
+                [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+            }
         }
-        
-    } else if([alertView.title isEqualToString:@"Search Term"]) {
-        NSString *searchTerm = [[alertView textFieldAtIndex:0] text];
-        NSLog(@"Entered: %@", searchTerm);
-        
-        NSString *post = [NSString stringWithFormat:@"searchTerm=%@",searchTerm];
-        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        
-        [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/search"]];
-        [request setHTTPMethod:@"POST"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [request setHTTPBody:postData];
-        
-        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        if(!conn) {
-            [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
-        }
-    } else {
-        NSString *video = [[alertView textFieldAtIndex:0] text];
-        NSLog(@"Entered: %@", video);
-        
-        NSString *post = [NSString stringWithFormat:@"video=%@",video];
-        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        
-        [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/newRoom"]];
-        [request setHTTPMethod:@"POST"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [request setHTTPBody:postData];
-        
-        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        if(!conn) {
-            [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
-        }
-
     }
 }
 
@@ -145,13 +145,31 @@
                                                                       error:&error];
     NSLog(@"%@", loginSuccessful);
     
-    VideoViewController *videoVC = [[VideoViewController alloc] init];
-    videoVC.annotations = [loginSuccessful objectForKey:@"annotations"];
-    videoVC.videoLink = [loginSuccessful objectForKey:@"video"];
-    videoVC.roomID = [loginSuccessful objectForKey:@"roomID"];
-    [self presentViewController:videoVC animated:YES completion:nil];
-    
-    [SVProgressHUD showSuccessWithStatus: @"Room Joined"];
+    if([[loginSuccessful objectForKey:@"type"] isEqualToString:@"search"]) {
+        
+        NSString *video = [loginSuccessful objectForKey:@"data"];
+        video = [video substringFromIndex:([video rangeOfString:@"="].location+1)];
+        NSLog(@"%@", video);
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.hotbox-x.xyz/newroom/%@", video]];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url
+                                                               cachePolicy: NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                           timeoutInterval: 10 ];
+        [request setHTTPMethod: @"GET"];
+        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        if(!conn) {
+            [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
+            
+        }
+    } else {
+        VideoViewController *videoVC = [[VideoViewController alloc] init];
+        videoVC.annotations = [loginSuccessful objectForKey:@"annotations"];
+        videoVC.videoLink = [loginSuccessful objectForKey:@"video"];
+        videoVC.roomID = [loginSuccessful objectForKey:@"roomID"];
+        [self presentViewController:videoVC animated:YES completion:nil];
+        
+        [SVProgressHUD showSuccessWithStatus: @"Room Joined"];
+    }
 }
 
 

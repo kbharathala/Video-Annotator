@@ -13,9 +13,10 @@
 		6B3BB0A91BC96FED00DD8672 /* shareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0A81BC96FED00DD8672 /* shareIcon.png */; };
 		6B3BB0B11BC9759A00DD8672 /* plusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0B01BC9759A00DD8672 /* plusIcon.png */; };
 		6B3BB0B71BC977EF00DD8672 /* clockIcon60F.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0B61BC977EF00DD8672 /* clockIcon60F.png */; };
-		6B3BB0BD1BCA033200DD8672 /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0BC1BCA033200DD8672 /* redCircle.png */; };
-		6B3BB0C01BCA042B00DD8672 /* greenCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0BE1BCA042B00DD8672 /* greenCircle.png */; };
-		6B3BB0C11BCA042B00DD8672 /* blueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0BF1BCA042B00DD8672 /* blueCircle.png */; };
+		6B3BB0C91BCA14CA00DD8672 /* searchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0C81BCA14CA00DD8672 /* searchIcon.png */; };
+		6B3BB0CB1BCA156D00DD8672 /* linkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0CA1BCA156D00DD8672 /* linkIcon.png */; };
+		6B3BB0CD1BCA17DD00DD8672 /* roomIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0CC1BCA17DD00DD8672 /* roomIcon.png */; };
+		6B3BB0D31BCA2D4E00DD8672 /* yannotate-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0D21BCA2D4E00DD8672 /* yannotate-logo.png */; };
 		6BB3E2911BC8D91B00A4744C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2901BC8D91B00A4744C /* main.m */; };
 		6BB3E2941BC8D91B00A4744C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2931BC8D91B00A4744C /* AppDelegate.m */; };
 		6BB3E2971BC8D91B00A4744C /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2961BC8D91B00A4744C /* VideoViewController.m */; };
@@ -33,9 +34,10 @@
 		6B3BB0A81BC96FED00DD8672 /* shareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareIcon.png; sourceTree = "<group>"; };
 		6B3BB0B01BC9759A00DD8672 /* plusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusIcon.png; sourceTree = "<group>"; };
 		6B3BB0B61BC977EF00DD8672 /* clockIcon60F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clockIcon60F.png; sourceTree = "<group>"; };
-		6B3BB0BC1BCA033200DD8672 /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
-		6B3BB0BE1BCA042B00DD8672 /* greenCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenCircle.png; sourceTree = "<group>"; };
-		6B3BB0BF1BCA042B00DD8672 /* blueCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueCircle.png; sourceTree = "<group>"; };
+		6B3BB0C81BCA14CA00DD8672 /* searchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchIcon.png; sourceTree = "<group>"; };
+		6B3BB0CA1BCA156D00DD8672 /* linkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkIcon.png; sourceTree = "<group>"; };
+		6B3BB0CC1BCA17DD00DD8672 /* roomIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roomIcon.png; sourceTree = "<group>"; };
+		6B3BB0D21BCA2D4E00DD8672 /* yannotate-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yannotate-logo.png"; sourceTree = "<group>"; };
 		6BB3E28B1BC8D91B00A4744C /* Video-Annotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Annotator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB3E28F1BC8D91B00A4744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BB3E2901BC8D91B00A4744C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,9 +110,10 @@
 		6BB3E28E1BC8D91B00A4744C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6B3BB0BE1BCA042B00DD8672 /* greenCircle.png */,
-				6B3BB0BF1BCA042B00DD8672 /* blueCircle.png */,
-				6B3BB0BC1BCA033200DD8672 /* redCircle.png */,
+				6B3BB0D21BCA2D4E00DD8672 /* yannotate-logo.png */,
+				6B3BB0C81BCA14CA00DD8672 /* searchIcon.png */,
+				6B3BB0CA1BCA156D00DD8672 /* linkIcon.png */,
+				6B3BB0CC1BCA17DD00DD8672 /* roomIcon.png */,
 				6B3BB0B61BC977EF00DD8672 /* clockIcon60F.png */,
 				6B3BB0B01BC9759A00DD8672 /* plusIcon.png */,
 				6B3BB0A81BC96FED00DD8672 /* shareIcon.png */,
@@ -190,11 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB3E29F1BC8D91B00A4744C /* LaunchScreen.xib in Resources */,
+				6B3BB0CB1BCA156D00DD8672 /* linkIcon.png in Resources */,
+				6B3BB0C91BCA14CA00DD8672 /* searchIcon.png in Resources */,
 				6B3BB0B71BC977EF00DD8672 /* clockIcon60F.png in Resources */,
-				6B3BB0C01BCA042B00DD8672 /* greenCircle.png in Resources */,
-				6B3BB0C11BCA042B00DD8672 /* blueCircle.png in Resources */,
+				6B3BB0D31BCA2D4E00DD8672 /* yannotate-logo.png in Resources */,
 				6B3BB0A91BC96FED00DD8672 /* shareIcon.png in Resources */,
-				6B3BB0BD1BCA033200DD8672 /* redCircle.png in Resources */,
+				6B3BB0CD1BCA17DD00DD8672 /* roomIcon.png in Resources */,
 				6BB3E29C1BC8D91B00A4744C /* Images.xcassets in Resources */,
 				6B3BB0B11BC9759A00DD8672 /* plusIcon.png in Resources */,
 			);

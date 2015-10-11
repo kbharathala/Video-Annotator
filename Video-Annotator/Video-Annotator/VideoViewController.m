@@ -38,6 +38,8 @@
         }
     }
     
+    NSLog(@"%@", self.videoLink);
+    
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.webView setAllowsInlineMediaPlayback:YES];
     [self.webView setMediaPlaybackRequiresUserAction:NO];
@@ -48,8 +50,7 @@
     
     [self.view addSubview:self.webView];
     
-    // NSString *key = [self.videoLink substringFromIndex: ([self.videoLink rangeOfString:@"="].location+1)];
-    NSString *key = @"9MxBaqZ3ZtA";
+    NSString *key = self.videoLink;
     
     NSString* embedHTML = [NSString stringWithFormat:@"\
                            <html>\
@@ -119,13 +120,15 @@
 }
 
 -(void) add {
+    
+    NSLog(@"Adding an Annotation");
+    
     NSString *script = @"ytplayer.pauseVideo()";
     [self.webView stringByEvaluatingJavaScriptFromString:script];
     
     UIAlertView *addAlert = [[UIAlertView alloc] initWithTitle:@"Add Annotation" message:@"Add Annotation" delegate:self cancelButtonTitle:@"Submit" otherButtonTitles:@"Cancel", nil];
     addAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [addAlert show];
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -133,18 +136,18 @@
     int timeStamp = (int)[[self.webView stringByEvaluatingJavaScriptFromString:script] floatValue];
     
     if([alertView.title isEqualToString:@"Add Annotation"]) {
-        NSString *script = @"ytplayer.playVideo()";
-        [self.webView stringByEvaluatingJavaScriptFromString:script];
-        
         if(buttonIndex == 0) {
             NSString *comment = [[alertView textFieldAtIndex:0] text];
             
-            NSString *post = [NSString stringWithFormat:@"roomID=%@&start=%d&end=%d&annotate=%@",self.roomID,timeStamp, timeStamp+2, comment];
+            //Annotation *annotate = [[Annotation alloc] initWithStart:timeStamp end:timeStamp+2 comment:comment];
+            
+            NSString *post = [NSString stringWithFormat:@"roomID=asdf&video=asdfasdfasdf&annotate=%@", nil];
+            NSLog(@"%@", post);
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
             NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
-            [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/annotate"]];
+            [request setURL:[NSURL URLWithString:@"http://hotbox-x.xyz/annotate/"]];
             [request setHTTPMethod:@"POST"];
             [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -155,6 +158,8 @@
                 [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
             }
         }
+        NSString *script = @"ytplayer.playVideo()";
+        [self.webView stringByEvaluatingJavaScriptFromString:script];
     }
 }
 
