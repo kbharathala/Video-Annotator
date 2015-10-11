@@ -11,12 +11,14 @@
 #import <OneDriveSDK/OneDriveSDK.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <Wit/Wit.h>
+#import "SimpleNetworking.h"
 
 @interface VideoViewController ()
 
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) UIButton *button;
 @property (nonatomic, strong) NSMutableDictionary *annotationDict;
+@property (nonatomic, strong) UILabel *currLabel;
 
 @end
 
@@ -25,21 +27,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    for(Annotation *a in self.annotations) {
-        for(int i = a.start; i <= a.end; i++) {
+    self.currLabel = [[UILabel alloc] init];
+    
+    self.annotationDict = [[NSMutableDictionary alloc] init];
+    
+    for(NSDictionary *a in self.annotations) {
+        int start = [[a objectForKey:@"timeStampStart"] integerValue];
+        int end = [[a objectForKey:@"timeStampEnd"] integerValue];
+        for(int i = start; i <= end; i++) {
             NSString *key = [NSString stringWithFormat: @"%d", i];
             NSMutableArray *temp = [self.annotationDict objectForKey:key];
             if(temp) {
-                [temp addObject: a.comment];
+                [temp addObject: [a objectForKey:@"comment"]];
                 [self.annotationDict setObject:temp forKey:key];
             } else {
-                NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:a.comment, nil];
+                NSMutableArray *array = [[NSMutableArray alloc] init];
+                [array addObject:[a objectForKey:@"comment"]];
                 [self.annotationDict setObject:array forKey:key];
             }
         }
     }
-    
-    NSLog(@"%@", self.videoLink);
+    NSLog(@"%@", self.annotationDict);
     
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.webView setAllowsInlineMediaPlayback:YES];
@@ -74,7 +82,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    //[self startCheckingValue];
+    [self startCheckingValue];
     
     UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [shareButton addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
@@ -83,12 +91,12 @@
     [shareButton setTintColor:[UIColor whiteColor]];
     [self.view addSubview:shareButton];
     
-    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    /*UIButton *addButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [addButton addTarget:self action:@selector(add) forControlEvents:UIControlEventTouchUpInside];
     [addButton setFrame:CGRectMake(453, 8.5, 32, 32)];
     [addButton setImage:[UIImage imageNamed:@"plusIcon.png"] forState:UIControlStateNormal];
     [addButton setTintColor:[UIColor whiteColor]];
-    [self.view addSubview:addButton];
+    [self.view addSubview:addButton];*/
     
     UIButton *clockButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [clockButton addTarget:self action:@selector(uploadToOneDrive) forControlEvents:UIControlEventTouchUpInside];
@@ -99,13 +107,20 @@
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setFrame:CGRectMake(385, 9, 30, 30)];
+    [backButton setFrame:CGRectMake(350, 9, 30, 30)];
     [backButton setImage:[UIImage imageNamed:@"backIcon.png"] forState:UIControlStateNormal];
     [backButton setTintColor:[UIColor whiteColor]];
     [self.view addSubview:backButton];
     
-    WITMicButton* witButton = [[WITMicButton alloc] initWithFrame:CGRectMake(422, 12, 24, 24)];
-    [self.view addSubview:witButton];
+    /*UIButton *easelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [easelButton addTarget:self action:@selector(draw) forControlEvents:UIControlEventTouchUpInside];
+    [easelButton setFrame:CGRectMake(385, 9, 30, 30)];
+    [easelButton setImage:[UIImage imageNamed:@"easelIcon.png"] forState:UIControlStateNormal];
+    [easelButton setTintColor:[UIColor whiteColor]];
+    [self.view addSubview:easelButton]; */
+    
+    /*WITMicButton* witButton = [[WITMicButton alloc] initWithFrame:CGRectMake(422, 12, 24, 24)];
+    [self.view addSubview:witButton];*/
 }
 
 - (void)witDidGraspIntent:(NSArray *)outcomes messageId:(NSString *)messageId customData:(id) customData error:(NSError*)e {
@@ -120,7 +135,6 @@
 }
 
 -(void) back {
-    
     MainViewController *mainVC = [[MainViewController alloc] init];
     [self presentViewController:mainVC animated:YES completion:nil];
 }
@@ -134,43 +148,48 @@
 }
 
 -(void) add {
-    
     NSLog(@"Adding an Annotation");
     
     NSString *script = @"ytplayer.pauseVideo()";
     [self.webView stringByEvaluatingJavaScriptFromString:script];
     
-    UIAlertView *addAlert = [[UIAlertView alloc] initWithTitle:@"Add Annotation" message:@"Add Annotation" delegate:self cancelButtonTitle:@"Submit" otherButtonTitles:@"Cancel", nil];
+    UIAlertView *addAlert = [[UIAlertView alloc] initWithTitle:@"Add Annotation" message:nil delegate:self cancelButtonTitle:@"Submit" otherButtonTitles:@"Cancel", nil];
     addAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [addAlert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString *script = @"ytplayer.getCurrentTime()";
-    int timeStamp = (int)[[self.webView stringByEvaluatingJavaScriptFromString:script] floatValue];
+    NSNumber *timeStamp = @([[self.webView stringByEvaluatingJavaScriptFromString:script] floatValue]);
     
     if([alertView.title isEqualToString:@"Add Annotation"]) {
         if(buttonIndex == 0) {
             NSString *comment = [[alertView textFieldAtIndex:0] text];
             
-            //Annotation *annotate = [[Annotation alloc] initWithStart:timeStamp end:timeStamp+2 comment:comment];
+            /*NSLog(@"Entered: %@", comment);
+            NSString *urlString = [NSString stringWithFormat:@"http://www.hotbox-x.xyz/annotate/add/%@/%@/%d/%d/%@", self.videoLink, self.roomID, timeStamp, timeStamp+2, comment];
+            NSLog(@"%@", urlString);
             
-            NSString *post = [NSString stringWithFormat:@"roomID=asdf&video=asdfasdfasdf&annotate=%@", nil];
-            NSLog(@"%@", post);
-            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-            NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-
-            [request setURL:[NSURL URLWithString:@"http://hotbox-x.xyz/annotate/"]];
-            [request setHTTPMethod:@"POST"];
-            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-            [request setHTTPBody:postData];
-        
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlString]
+                                                                   cachePolicy: NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                               timeoutInterval: 10 ];
+            [request setHTTPMethod: @"GET"];
             NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
             if(!conn) {
                 [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
-            }
+            } */
+            
+            NSString *url = @"http://www.hotbox-x.xyz/annotate/add";
+            
+            NSDictionary *param = @{@"video":self.videoLink,@"roomID":self.roomID,@"timeStampStart":timeStamp,@"timeStampEnd":timeStamp, @"annotation":comment};
+            
+            [SimpleNetworking postToURL:url param:param returned:^(id responseObject, NSError *error){
+                if (error) {
+                    NSLog(@"error %@", error.localizedDescription);
+                } else {
+                    NSLog(@"%@", responseObject);
+                }
+            }];
         }
         NSString *script = @"ytplayer.playVideo()";
         [self.webView stringByEvaluatingJavaScriptFromString:script];
@@ -185,8 +204,19 @@
 -(void)checkValue:(NSTimer *)mainTimer {
     NSString *script = @"ytplayer.getCurrentTime()";
     int time = (int)[[self.webView stringByEvaluatingJavaScriptFromString:script] floatValue];
-    //NSLog(@"Time is: %d", time);
     NSLog(@"%@", [self.annotationDict objectForKey:[NSString stringWithFormat:@"%d", time]]);
+    NSArray *tempArray = [self.annotationDict objectForKey:[NSString stringWithFormat:@"%d", time]];
+    if(tempArray) {
+        self.currLabel.text = [tempArray componentsJoinedByString:@" "];
+        NSLog(@"%@", self.currLabel.text);
+    } else {
+        self.currLabel.text = @"";
+    }
+    [self.currLabel sizeToFit];
+    [self.currLabel setTextColor:[UIColor whiteColor]];
+    [self.currLabel setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - 50)];
+    [self.view addSubview:self.currLabel];
+    
 }
 
 -(void) uploadToOneDrive {

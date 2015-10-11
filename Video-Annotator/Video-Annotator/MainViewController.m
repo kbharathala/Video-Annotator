@@ -74,7 +74,7 @@
     [searchTermAlert show];
 }
 
-- (void) chooseExisting {
+- (void)chooseExisting {
     UIAlertView *videoLinkAlert = [[UIAlertView alloc] initWithTitle:@"Video Link" message:nil delegate:self cancelButtonTitle:@"Submit" otherButtonTitles:@"Cancel", nil];
     videoLinkAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [videoLinkAlert show];
@@ -163,7 +163,7 @@
         }
     } else {
         VideoViewController *videoVC = [[VideoViewController alloc] init];
-        videoVC.annotations = [loginSuccessful objectForKey:@"annotations"];
+        videoVC.annotations = [loginSuccessful objectForKey:@"annotation"];
         videoVC.videoLink = [loginSuccessful objectForKey:@"video"];
         videoVC.roomID = [loginSuccessful objectForKey:@"roomID"];
         [self presentViewController:videoVC animated:YES completion:nil];

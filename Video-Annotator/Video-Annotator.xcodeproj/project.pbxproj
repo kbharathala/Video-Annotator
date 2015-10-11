@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4BE8EF60B95F0B90566E7E89 /* libPods-Video-Annotator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F2C3DCBCDF3F317D5E1200 /* libPods-Video-Annotator.a */; };
+		6B387A0C1BCA822E00BAA99B /* easelIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B387A0B1BCA822E00BAA99B /* easelIcon.png */; };
+		6B387A121BCAAA8B00BAA99B /* SimpleNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B387A111BCAAA8B00BAA99B /* SimpleNetworking.m */; };
 		6B3BB09E1BC9120400DD8672 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3BB09D1BC9120400DD8672 /* MainViewController.m */; };
 		6B3BB0A71BC9304100DD8672 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3BB0A61BC9304100DD8672 /* Annotation.m */; };
 		6B3BB0A91BC96FED00DD8672 /* shareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0A81BC96FED00DD8672 /* shareIcon.png */; };
@@ -28,6 +30,9 @@
 /* Begin PBXFileReference section */
 		262A8D86BFF236C4D45890F8 /* Pods-Video-Annotator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Annotator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Video-Annotator/Pods-Video-Annotator.release.xcconfig"; sourceTree = "<group>"; };
 		33285BBF592D9D387CCC9A78 /* Pods-Video-Annotator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Annotator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Video-Annotator/Pods-Video-Annotator.debug.xcconfig"; sourceTree = "<group>"; };
+		6B387A0B1BCA822E00BAA99B /* easelIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easelIcon.png; sourceTree = "<group>"; };
+		6B387A101BCAAA8B00BAA99B /* SimpleNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleNetworking.h; sourceTree = "<group>"; };
+		6B387A111BCAAA8B00BAA99B /* SimpleNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleNetworking.m; sourceTree = "<group>"; };
 		6B3BB09C1BC9120400DD8672 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		6B3BB09D1BC9120400DD8672 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6B3BB0A51BC9304100DD8672 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
@@ -73,6 +78,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6B387A0F1BCAAA8B00BAA99B /* SimpleNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				6B387A101BCAAA8B00BAA99B /* SimpleNetworking.h */,
+				6B387A111BCAAA8B00BAA99B /* SimpleNetworking.m */,
+			);
+			name = SimpleNetworking;
+			path = ../SimpleNetworking;
+			sourceTree = "<group>";
+		};
 		6BB3E2821BC8D91B00A4744C = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +119,7 @@
 				6BB3E2961BC8D91B00A4744C /* VideoViewController.m */,
 				6BB3E29B1BC8D91B00A4744C /* Images.xcassets */,
 				6BB3E29D1BC8D91B00A4744C /* LaunchScreen.xib */,
+				6B387A0F1BCAAA8B00BAA99B /* SimpleNetworking */,
 				6BB3E28E1BC8D91B00A4744C /* Supporting Files */,
 			);
 			path = "Video-Annotator";
@@ -112,6 +128,7 @@
 		6BB3E28E1BC8D91B00A4744C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B387A0B1BCA822E00BAA99B /* easelIcon.png */,
 				6B3BB0D41BCA61CC00DD8672 /* backIcon.png */,
 				6B3BB0D21BCA2D4E00DD8672 /* yannotate-logo.png */,
 				6B3BB0C81BCA14CA00DD8672 /* searchIcon.png */,
@@ -199,6 +216,7 @@
 				6B3BB0CB1BCA156D00DD8672 /* linkIcon.png in Resources */,
 				6B3BB0C91BCA14CA00DD8672 /* searchIcon.png in Resources */,
 				6B3BB0D51BCA61CC00DD8672 /* backIcon.png in Resources */,
+				6B387A0C1BCA822E00BAA99B /* easelIcon.png in Resources */,
 				6B3BB0B71BC977EF00DD8672 /* clockIcon60F.png in Resources */,
 				6B3BB0D31BCA2D4E00DD8672 /* yannotate-logo.png in Resources */,
 				6B3BB0A91BC96FED00DD8672 /* shareIcon.png in Resources */,
@@ -264,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B3BB0A71BC9304100DD8672 /* Annotation.m in Sources */,
+				6B387A121BCAAA8B00BAA99B /* SimpleNetworking.m in Sources */,
 				6BB3E2971BC8D91B00A4744C /* VideoViewController.m in Sources */,
 				6BB3E2941BC8D91B00A4744C /* AppDelegate.m in Sources */,
 				6BB3E2911BC8D91B00A4744C /* main.m in Sources */,
