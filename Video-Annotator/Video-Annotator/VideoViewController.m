@@ -7,6 +7,7 @@
 //
 
 #import "VideoViewController.h"
+#import "MainViewController.h"
 #import <OneDriveSDK/OneDriveSDK.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <Wit/Wit.h>
@@ -96,6 +97,13 @@
     [clockButton setTintColor:[UIColor whiteColor]];
     [self.view addSubview:clockButton];
     
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setFrame:CGRectMake(385, 9, 30, 30)];
+    [backButton setImage:[UIImage imageNamed:@"backIcon.png"] forState:UIControlStateNormal];
+    [backButton setTintColor:[UIColor whiteColor]];
+    [self.view addSubview:backButton];
+    
     WITMicButton* witButton = [[WITMicButton alloc] initWithFrame:CGRectMake(422, 12, 24, 24)];
     [self.view addSubview:witButton];
 }
@@ -109,6 +117,12 @@
     NSLog(@"%@", firstOutcome);
     
     ///[self.view addSubview:labelView];
+}
+
+-(void) back {
+    
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    [self presentViewController:mainVC animated:YES completion:nil];
 }
 
 -(void) share {

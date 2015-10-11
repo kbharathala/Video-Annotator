@@ -17,6 +17,7 @@
 		6B3BB0CB1BCA156D00DD8672 /* linkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0CA1BCA156D00DD8672 /* linkIcon.png */; };
 		6B3BB0CD1BCA17DD00DD8672 /* roomIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0CC1BCA17DD00DD8672 /* roomIcon.png */; };
 		6B3BB0D31BCA2D4E00DD8672 /* yannotate-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0D21BCA2D4E00DD8672 /* yannotate-logo.png */; };
+		6B3BB0D51BCA61CC00DD8672 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BB0D41BCA61CC00DD8672 /* backIcon.png */; };
 		6BB3E2911BC8D91B00A4744C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2901BC8D91B00A4744C /* main.m */; };
 		6BB3E2941BC8D91B00A4744C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2931BC8D91B00A4744C /* AppDelegate.m */; };
 		6BB3E2971BC8D91B00A4744C /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E2961BC8D91B00A4744C /* VideoViewController.m */; };
@@ -38,6 +39,7 @@
 		6B3BB0CA1BCA156D00DD8672 /* linkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkIcon.png; sourceTree = "<group>"; };
 		6B3BB0CC1BCA17DD00DD8672 /* roomIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roomIcon.png; sourceTree = "<group>"; };
 		6B3BB0D21BCA2D4E00DD8672 /* yannotate-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yannotate-logo.png"; sourceTree = "<group>"; };
+		6B3BB0D41BCA61CC00DD8672 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backIcon.png; sourceTree = "<group>"; };
 		6BB3E28B1BC8D91B00A4744C /* Video-Annotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Annotator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB3E28F1BC8D91B00A4744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BB3E2901BC8D91B00A4744C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		6BB3E28E1BC8D91B00A4744C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B3BB0D41BCA61CC00DD8672 /* backIcon.png */,
 				6B3BB0D21BCA2D4E00DD8672 /* yannotate-logo.png */,
 				6B3BB0C81BCA14CA00DD8672 /* searchIcon.png */,
 				6B3BB0CA1BCA156D00DD8672 /* linkIcon.png */,
@@ -195,6 +198,7 @@
 				6BB3E29F1BC8D91B00A4744C /* LaunchScreen.xib in Resources */,
 				6B3BB0CB1BCA156D00DD8672 /* linkIcon.png in Resources */,
 				6B3BB0C91BCA14CA00DD8672 /* searchIcon.png in Resources */,
+				6B3BB0D51BCA61CC00DD8672 /* backIcon.png in Resources */,
 				6B3BB0B71BC977EF00DD8672 /* clockIcon60F.png in Resources */,
 				6B3BB0D31BCA2D4E00DD8672 /* yannotate-logo.png in Resources */,
 				6B3BB0A91BC96FED00DD8672 /* shareIcon.png in Resources */,
