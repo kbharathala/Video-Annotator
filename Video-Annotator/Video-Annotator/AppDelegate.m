@@ -32,7 +32,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     VideoViewController *videoVC = [[VideoViewController alloc] init];
     MainViewController *mainVC = [[MainViewController alloc] init];
-    self.window.rootViewController = videoVC;
+    self.window.rootViewController = mainVC;
     [self.window makeKeyAndVisible];
     
     [ODClient setMicrosoftAccountAppId:@"0000000048160AF8" scopes:@[@"onedrive.readwrite"] ];

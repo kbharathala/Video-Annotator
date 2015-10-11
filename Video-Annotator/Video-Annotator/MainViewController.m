@@ -21,31 +21,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:122.0/255 green:175.0/255 blue:255/255 alpha:1];
+    
+    int size = 160;
     
     UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    searchButton.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
     [searchButton setTitle:@"Search" forState:UIControlStateNormal];
     [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [searchButton setBackgroundImage:[UIImage imageNamed:@"circle60.png"] forState:UIControlStateNormal];
-    [searchButton setFrame:CGRectMake(100, self.view.frame.size.height/2-40, 80, 80)];
+    [searchButton setBackgroundImage:[UIImage imageNamed:@"blueCircle.png"] forState:UIControlStateNormal];
+    [searchButton setFrame:CGRectMake(100-size/2, self.view.frame.size.height/2-size/12, size, size)];
     [searchButton addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
     [searchButton setTintColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.5]];
     [self.view addSubview:searchButton];
     
     UIButton *chooseExisting = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    chooseExisting.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
     [chooseExisting setTitle:@"From Link" forState:UIControlStateNormal];
     [chooseExisting setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [chooseExisting setBackgroundImage:[UIImage imageNamed:@"circle60.png"] forState:UIControlStateNormal];
-    [chooseExisting setFrame:CGRectMake(self.view.frame.size.width/2-40, self.view.frame.size.height/2-40, 80, 80)];
+    [chooseExisting setBackgroundImage:[UIImage imageNamed:@"blueCircle.png"] forState:UIControlStateNormal];
+    [chooseExisting setFrame:CGRectMake(self.view.frame.size.width/2-size/2, self.view.frame.size.height/2-size/12, size, size)];
     [chooseExisting addTarget:self action:@selector(chooseExisting) forControlEvents:UIControlEventTouchUpInside];
     [chooseExisting setTintColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:0.5]];
     [self.view addSubview:chooseExisting];
     
     UIButton *fromRoomID = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    fromRoomID.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
     [fromRoomID setTitle:@"Room ID" forState:UIControlStateNormal];
     [fromRoomID setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [fromRoomID setBackgroundImage:[UIImage imageNamed:@"circle60.png"] forState:UIControlStateNormal];
-    [fromRoomID setFrame:CGRectMake(self.view.frame.size.width-180, self.view.frame.size.height/2-40, 80, 80)];
+    [fromRoomID setBackgroundImage:[UIImage imageNamed:@"blueCircle.png"] forState:UIControlStateNormal];
+    [fromRoomID setFrame:CGRectMake(self.view.frame.size.width-180, self.view.frame.size.height/2-size/12, size, size)];
     [fromRoomID setTintColor:[UIColor colorWithRed:0 green:0 blue:1 alpha:0.5]];
     [fromRoomID addTarget:self action:@selector(fromRoomID) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fromRoomID];
