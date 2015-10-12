@@ -107,7 +107,7 @@
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setFrame:CGRectMake(350, 9, 30, 30)];
+    [backButton setFrame:CGRectMake(453, 9, 30, 30)];
     [backButton setImage:[UIImage imageNamed:@"backIcon.png"] forState:UIControlStateNormal];
     [backButton setTintColor:[UIColor whiteColor]];
     [self.view addSubview:backButton];
@@ -224,35 +224,31 @@
     NSString *script = @"ytplayer.pauseVideo()";
     [self.webView stringByEvaluatingJavaScriptFromString:script];
     
-    //__block NSString *oneDriveToken;
+    __block NSString *oneDriveToken;
     
-//    [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
-//        if (!error){
-//            oneDriveToken = client.authProvider.accountSession.accessToken;
-//            
-//            NSString *post = [NSString stringWithFormat:@"roomID=%@&start=%d&end=%d&annotate=%@",self.roomID,timeStamp, timeStamp+2, comment];
-//            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-//            NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-//            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//            
-//            [request setURL:[NSURL URLWithString:@"http://yannotator.azurewebsites.net/onedrive"]];
-//            [request setHTTPMethod:@"POST"];
-//            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//            [request setHTTPBody:postData];
-//            
-//            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-//            if(!conn) {
-//                [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
-//            }
-//
-//        }
-//        NSLog(@"%@", oneDriveToken);
-//        NSString *script = @"ytplayer.playVideo()";
-//        [self.webView stringByEvaluatingJavaScriptFromString:script];
-//    }];
+    [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
+        if (!error){
+            oneDriveToken = client.authProvider.accountSession.accessToken;
+            
+            NSError *error;
+            NSString *stringToWrite = [NSString stringWithFormat: @"%@",self.annotationDict];
+            NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"myfile.txt"];
+            NSURL *fileUrlPath = [NSURL URLWithString:filePath];
+            [stringToWrite writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+            
+            ODItemContentRequest *request = [[[client drive] items:@"root"] contentRequest];
+            
+            [request uploadFromFile:fileUrlPath completion:^(ODItem *item, NSError *error){
+                NSLog(@"??");
+            }];
+            
+        }
+        /*NSLog(@"%@", oneDriveToken);
+        NSString *script = @"ytplayer.playVideo()";
+        [self.webView stringByEvaluatingJavaScriptFromString:script]; */
+    }];
     
-    NSString *post = [NSString stringWithFormat:@"roomID=%@",self.roomID];
+    /*NSString *post = [NSString stringWithFormat:@"roomID=%@",self.roomID];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -266,9 +262,9 @@
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if(!conn) {
         [SVProgressHUD showErrorWithStatus:@"Connection could not be made"];
-    }
-    script = @"ytplayer.playVideo()";
-    [self.webView stringByEvaluatingJavaScriptFromString:script];
+    } */
+    //script = @"ytplayer.playVideo()";
+    //[self.webView stringByEvaluatingJavaScriptFromString:script];
 }
 
 

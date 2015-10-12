@@ -10,6 +10,7 @@
 #import "VideoViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "Annotation.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -166,9 +167,9 @@
         videoVC.annotations = [loginSuccessful objectForKey:@"annotation"];
         videoVC.videoLink = [loginSuccessful objectForKey:@"video"];
         videoVC.roomID = [loginSuccessful objectForKey:@"roomID"];
-        [self presentViewController:videoVC animated:YES completion:nil];
+        [[[[[UIApplication sharedApplication] delegate] window] rootViewController] presentViewController:videoVC animated:YES completion:nil];
         
-        [SVProgressHUD showSuccessWithStatus: @"Room Joined"];
+        //[SVProgressHUD showSuccessWithStatus: @"Room Joined"];
     }
 }
 
